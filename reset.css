@@ -1,0 +1,126 @@
+*, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    object-fit: cover;
+    background: transparent;
+}
+.header,
+ .footer {
+    width:100%;
+    min-height:100px;
+    background:rgba(0,0,0,0.5);
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    & h1 {
+        font-size:4em;
+        padding:10px;
+    }
+}
+.page {
+    width:100%;
+    min-height:80vh;
+    background:blue;
+}
+.page_in {
+    max-width:1092px;
+    min-height:80vh;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top:50px;
+    padding-bottom:50px;
+}
+.back_anim_dark {
+    background-image:linear-gradient(90deg, #00008B, #4B0082, #006400);
+    animation: gradient_back_dark 5s ease infinite;
+    background-size: 300% 100%;
+}
+@keyframes gradient_back_dark {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* gradient_text */
+.gradient_text {
+    background: linear-gradient(90deg, #FFD700, #C0C0C0, #FFD700);
+    background-clip:text;
+    background-size: 400% 100%;
+    color:transparent;
+    animation: gradient 3s ease infinite;
+    transform: translate3d(0, 0, 0);
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* дополнения если пожелаете, если нет, удалите в html effect_border_blue */
+/*
+    дополнительная анимация для активных кнопок для текста
+    просто добавляете в тег в класс названия этого стиля и он будет применим
+    пример class="свои какие-то стили и effect_border_blue"
+    как просто надо обозначить, что можно нажать
+*/
+.effect_border_blue   {
+	position:relative;
+}
+.effect_border_blue::before {
+	content: '';
+	position: absolute;
+	bottom: -5px;
+	width: 25%;
+	height: 2px;
+    background: #45576D;
+	-webkit-transition: width 0.5s;
+	-o-transition: width 0.5s;
+	transition: width 0.5s;
+}
+.effect_border_blue:hover {
+    cursor: pointer;
+}
+.effect_border_blue:hover:before {
+	width: 50%;
+}
+.effect_border_blue:active:before {
+    width: 100%;
+}
+
+/*
+    анимация обоев  если понадобиться
+    так же к любому блоку добавляется этот класс или к боди
+*/
+.back_anim {
+    background-image:linear-gradient(90deg, #90EE90, #87CEFA);
+    animation: gradient_back 5s ease infinite;
+    background-size: 400% 100%;
+}
+@keyframes gradient_back {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
